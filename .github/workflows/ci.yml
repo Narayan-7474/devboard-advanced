@@ -3,13 +3,13 @@ name: CI
 
 on:
   push:
-    branch: [advanced]
+    branches: [advanced]
 
 jobs:
-   frontend:
+  frontend:
    # run on GitHub Runner
-   runs-on: ubuntu-latest
-   steps:
+  runs-on: ubuntu-latest
+  steps:
     - name: checkout-code
       uses: actions/checkout@v7
 
@@ -24,8 +24,8 @@ jobs:
       run: npm install
 
     - name: Run Linter
-      run: npm run Lin
+      run: npm run lint
 
     - name: Run Tests
       run: npm run test
-   backend:
+  backend:
