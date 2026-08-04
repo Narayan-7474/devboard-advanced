@@ -11,6 +11,9 @@ jobs:
       - name: Code checkout
         uses: actions/checkout@v7
 
+      - name: Copy .env to main env
+        run: cp .env
+
       - name: Docker setup [Login]
         uses: docker/login-action@v4
         with:
