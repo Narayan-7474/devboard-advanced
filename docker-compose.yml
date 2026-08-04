@@ -20,6 +20,7 @@ services:
   backend:
     container_name: "devboard-backend"
     build: ./backend
+    image: narayand/devboard-be:${IMAGE_TAG:-latest}
     environment:
       PORT: "${BACKEND_PORT}"
       POSTGRES_URL: "postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?sslmode=disable"
@@ -33,6 +34,7 @@ services:
   frontend:
     container_name: "devboard-frontend"
     build: ./frontend
+    image: narayand/devboard-fe:${IMAGE_TAG:-latest}
     ports:
       - "8080:4173"
     depends_on:
