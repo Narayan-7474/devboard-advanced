@@ -1,0 +1,12 @@
+# Anything which you want that inside in your container, we have to use configMap, 
+# where we put all of our variables after running postgress we want to run that something build inside our database i.e., schema
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: devboard-configmap 
+  namespace: devboard
+data:
+  POSTGRES_USER: devboard
+  
+  
